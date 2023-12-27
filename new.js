@@ -8,3 +8,5 @@ for (i=0;i<5;i++)
 {
     fs.writeFileSync(dirPath+"/hello"+i+".txt","a simple test file");
 }
+
+//this is a test comment
