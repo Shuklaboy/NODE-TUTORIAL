@@ -1,23 +1,16 @@
-// const http =  require('http')
-// const data= require('./data')
-// http.createServer((req,resp)=>{
-//     resp.writeHead(200,{'Content-Type':'application\json'});
-//     resp.write(JSON.stringify(data)
-// )
-//     resp.end();
-// }).listen(4500);
+const express = require('express');
+const app = express();
 
-const file= require('fs')
-const input=process.argv
+app.get("", (req, resp) => {
+    resp.send("Welcome,"+req.query.name);
+});
 
-if (input[2]=='add'){
-    file.writeFileSync(input[3],input[4])
-}
-else if (input[2]=='delete')
-{
-    file.unlinkSync(input[3])
-}
-else{
-    console.log("Error")
-}
+app.get("/about", (req, resp) => {
+    resp.send("Welcome, This is a About Page");
+});
 
+app.get("/help", (req, resp) => {
+    resp.send("Welcome, This is a Help Page");
+});
+
+app.listen(5000);
