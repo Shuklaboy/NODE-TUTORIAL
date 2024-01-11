@@ -11,7 +11,7 @@ app.get("", (req, resp) => {
 
 app.get("/about", (req, resp) => {
     resp.send(`
-<input type ="text" placeholder="User name "/>
+<input type ="text" placeholder="User name " value="${req.query.name}"/>
 <button>Click Me</button>
 <a href="/"> Go to home Page </a>
     `);
