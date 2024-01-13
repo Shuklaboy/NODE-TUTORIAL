@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-const publicPath=path.join(__dirname,'public')
+app.set ('view engine','ejs')
 
-// app.use(express.static(publicPath));
-app.get('',(_,resp)=>{
-    resp.sendFile(`${publicPath}/home.html`)
-})
-app.get('*',(_,resp)=>{
-    resp.sendFile(`${publicPath}/error.html`)
+app.get('/profile',(_,resp)=>{
+    const user ={
+        name: 'vikas shukla',
+        city:'Ranchi'
+    }
+    resp.render('profile',{user})
 })
 
 app.listen(5000);
