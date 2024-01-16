@@ -7,7 +7,7 @@ app.set ('view engine','ejs')
 app.get('/profile',(_,resp)=>{
     const user ={
         name: 'vikas shukla',
-        city:'Pune'
+        city:'JODHPUR'
     }
     resp.render('profile',{user})
 })
